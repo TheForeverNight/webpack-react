@@ -35,7 +35,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Output Management',
-            template: './public/index.html'
+            template: './public/index.html'//模板文件
         }),
         new CleanWebpackPlugin(['dist']), //清理dist旧的build文件
         new webpack.NamedModulesPlugin(),
@@ -43,9 +43,6 @@ module.exports = {
     ],
     devServer: {
         contentBase: './dist',
-        // host:'localhost',
-        // port:'8080',
-        // open:true,//自动拉起浏览器
         hot: true //热加载
     },
 };
