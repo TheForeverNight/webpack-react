@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader'
 
-import Form from './components/form/Form'
-
-
+import Count from './components/count';
+import AutoFocusTextInput from './components/autoFocusTextInput.js';
 
 class App extends Component{
     constructor(){
@@ -15,7 +14,8 @@ class App extends Component{
 
     render(){
         return <div>
-            <Form name={this.state.name} ></Form>
+            <Count />
+            <AutoFocusTextInput/>
         </div>
     }
 }
