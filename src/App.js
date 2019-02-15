@@ -1,22 +1,30 @@
-import React, { Component } from 'react';
-import { hot } from 'react-hot-loader'
+import React, { Component } from "react";
+import { hot } from "react-hot-loader";
 
-import Count from './components/count';
-import AutoFocusTextInput from './components/autoFocusTextInput.js';
+import Count from "./components/count";
 
-class App extends Component{
-    constructor(){
+class App extends Component {
+    constructor() {
         super();
         this.state = {
-            name:'wangjch'
-        }
+            name: "wangjch",
+            show:false
+        };
     }
 
-    render(){
-        return <div>
-            <Count />
-            <AutoFocusTextInput/>
-        </div>
+    toggleShow = () => {
+        this.setState({
+            show:!this.state.show
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <button onClick={this.toggleShow}>切换</button>
+                {this.state.show ? <Count /> : ''}
+            </div>
+        );
     }
 }
 
